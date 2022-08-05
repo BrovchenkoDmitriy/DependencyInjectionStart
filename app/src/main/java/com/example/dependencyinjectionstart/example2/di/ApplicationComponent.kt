@@ -10,16 +10,27 @@ interface ApplicationComponent {
 
     fun inject(activity: MainActivity)
 
-    @Component.Builder //use your own Builder
-    interface ApplicationComponentBuilder{
+//    @Component.Builder //use your own Builder
+//    interface ApplicationComponentBuilder{
+//
+//        @BindsInstance //annotation for use context in graph of dependencies
+//        fun context(context: Context):ApplicationComponentBuilder
+//
+//        @BindsInstance
+//        fun currentTime(time:Long):ApplicationComponentBuilder
+//
+//        fun build():ApplicationComponent
+//    }
 
-        @BindsInstance //annotation for use context in graph of dependencies
-        fun context(context: Context):ApplicationComponentBuilder
-
-        @BindsInstance
-        fun currentTime(time:Long):ApplicationComponentBuilder
-
-        fun build():ApplicationComponent
+    @Component.Factory
+    interface ApplicationComponentFactory{
+       fun create(
+           @BindsInstance context: Context,
+           @BindsInstance currentTimeMillis:Long
+       ):ApplicationComponent
     }
+
+
+
 
 }
