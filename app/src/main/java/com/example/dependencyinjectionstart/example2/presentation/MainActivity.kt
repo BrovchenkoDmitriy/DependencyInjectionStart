@@ -12,11 +12,6 @@ class MainActivity : AppCompatActivity() {
 
     private val component by lazy {
         DaggerApplicationComponent.factory().create(application, System.currentTimeMillis())
-//        DaggerApplicationComponent.
-//        builder().
-//        context(application).
-//        currentTime(System.currentTimeMillis()).
-//        build()
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
