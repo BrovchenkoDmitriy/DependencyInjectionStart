@@ -12,6 +12,6 @@ class ExampleViewModel2 @Inject constructor(
 
     fun method() {
         repository.method()
-        Log.d("EXAMPLE_TEST","ExampleViewModel2 $this")
+        Log.d("EXAMPLE_VM","ExampleViewModel2 $this")
     }
 }
