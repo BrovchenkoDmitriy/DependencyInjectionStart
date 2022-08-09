@@ -8,7 +8,7 @@ import dagger.Binds
 import dagger.Module
 
 @Module
-interface DataModule{
+interface DataModule {
 
     @ApplicationScope
     @Binds
